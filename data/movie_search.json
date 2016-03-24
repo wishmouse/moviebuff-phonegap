@@ -1,9 +1,4 @@
-var request = require('superagent')
-var dotenv = require('dotenv')
-require('domready')
-dotenv.load()
-
-var test_data = {
+{
   "page": 1,
   "results": [
     {
@@ -186,19 +181,3 @@ var test_data = {
   "total_results": 4,
   "total_pages": 1
 }
-
-//get search input from user...
-
-//call api with serach criteria....
-
-//get response back from api and render it to the user screen....
-
-function getMovieByActor(name){
-  console.log("hello2")
-  request.get("http://api.themoviedb.org/3/search/person?api_key=" + process.env)
-
-}
-
-
-
-
