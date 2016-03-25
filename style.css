@@ -2,6 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900,300);
 html{
   background: rgb(66, 66, 186);
+  color: white;
+
+
 }
 #container{
   margin: 0 auto;
@@ -35,7 +38,17 @@ html{
 
 }
 
+#results{
+  display: block;
+  width: 100%;
+    font-family:'Roboto', sans-serif;
+    font-weight: 400;
+}
 
+.poster{
+  float: left;
+  display:block ;
+}
 
 
 

@@ -19,13 +19,13 @@ function renderMovieResults(movies) {
   console.log(document)
   document.getElementById('results').innerHTML = ""
 
+
   for (var i = 0; i < movies.length; i++) {
 
     console.log(movies[i].title)
-    $("#results").append(movies[i].title + "<br>" + "<img src='https://image.tmdb.org/t/p/w185/" + movies[i].poster_path +"'> <br>")
+    $("#results").append("<div class='posters'><h3> " + movies[i].title + "</h3><br>" + "<img src='https://image.tmdb.org/t/p/w185/" + movies[i].poster_path +"'> <br></div>")
 
   }
-
 
 
 }
