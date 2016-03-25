@@ -1,7 +1,5 @@
 var request = require('superagent')
-var dotenv = require('dotenv')
-require('domready')
-dotenv.load()
+var $ = require("jquery");
 
 var test_data = {
   "page": 1,
@@ -193,9 +191,41 @@ var test_data = {
 
 //get response back from api and render it to the user screen....
 
-function getMovieByActor(name){
-  console.log("hello2")
-  request.get("http://api.themoviedb.org/3/search/person?api_key=" + process.env)
+document.addEventListener('DOMContentLoaded', function() {
+    getMovieByActor("Patrick Stewart", function(err, data){
+    var movies = data.body.results[0].known_for
+
+
+    renderMovieResults(movies)
+  })
+
+})
+
+function renderMovieResults(movies) {
+  console.log(document)
+  for (var i = 0; i < movies.length; i++) {
+
+    console.log(movies[i].title)
+    $("#nav").append(movies[i].title)
+  }
+  document.getElementById('footer').innerHTML = "<h1>"+ "test" + "</h1>"
+
+
+}
+
+function getMovieByActor(name, callback){
+
+  name = escape(name)
+  console.log(name)
+  request.get("http://api.themoviedb.org/3/search/person?api_key=da40aaeca884d8c9a9a4c088917c474c&query=" + name)
+    .set('Accept', 'application/json')
+    .end(function(err, res){
+      if (err) {
+        callback(err)
+        return
+      }
+      callback(null, res)
+    })
 
 }
 
