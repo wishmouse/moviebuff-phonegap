@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/James-Sangalli/Group-Movie-Project#readme",
   "dependencies": {
+    "budo": "^8.1.0",
     "dotenv": "^2.0.0",
+    "jquery": "^2.2.2",
     "superagent": "^1.8.3",
     "tape": "^4.5.1"
   }
