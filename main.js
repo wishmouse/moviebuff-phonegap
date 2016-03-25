@@ -192,7 +192,8 @@ var test_data = {
 //get response back from api and render it to the user screen....
 
 document.addEventListener('DOMContentLoaded', function() {
-    getMovieByActor("Patrick Stewart", function(err, data){
+    getMovieByActor("Mike Tyson", function(err, data){
+
     var movies = data.body.results[0].known_for
 
 
@@ -206,7 +207,8 @@ function renderMovieResults(movies) {
   for (var i = 0; i < movies.length; i++) {
 
     console.log(movies[i].title)
-    $("#nav").append(movies[i].title)
+    $("#nav").append(movies[i].title + "<br>" + "<img src='https://image.tmdb.org/t/p/w185/" + movies[i].poster_path +"'> <br>")
+
   }
   document.getElementById('footer').innerHTML = "<h1>"+ "test" + "</h1>"
 
