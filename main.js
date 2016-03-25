@@ -1,37 +1,31 @@
+var request = require('superagent')
+
 $(document).ready(function() {
 
-//Tells jquery to wait until dom has loaded before loading jquery
+  //Tells jquery to wait until dom has loaded before loading jquery
+  var inputData = $("#button").click(function() {
 
-var inputData = $("#button").click(function() {
+    var rawInput = $("#searchInput").val().toString();
+    getMovieByActor(rawInput, function(err, data){
 
-var rawInput = $("#searchInput").val().toString();
+      var movies = data.body.results[0].known_for
+      renderMovieResults(movies)
 
-console.log(typeof rawInput)
-})
-});
-
-console.log(dataForGetRequest)
-
-document.addEventListener('DOMContentLoaded', function() {
-    getMovieByActor("Mike Tyson", function(err, data){
-
-    var movies = data.body.results[0].known_for
-
-
-    renderMovieResults(movies)
+    })
   })
-
 })
 
 function renderMovieResults(movies) {
   console.log(document)
+  document.getElementById('results').innerHTML = ""
+
   for (var i = 0; i < movies.length; i++) {
 
     console.log(movies[i].title)
-    $("#nav").append(movies[i].title + "<br>" + "<img src='https://image.tmdb.org/t/p/w185/" + movies[i].poster_path +"'> <br>")
+    $("#results").append(movies[i].title + "<br>" + "<img src='https://image.tmdb.org/t/p/w185/" + movies[i].poster_path +"'> <br>")
 
   }
-  document.getElementById('footer').innerHTML = "<h1>"+ "test" + "</h1>"
+
 
 
 }
@@ -54,4 +48,8 @@ function getMovieByActor(name, callback){
 
 
 
+  document.addEventListener('DOMContentLoaded', function() {
+
+
+})
 
