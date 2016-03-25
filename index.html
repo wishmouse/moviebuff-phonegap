@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <title>Movie Buff</title>
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="style.css">
   <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="./bundle.js"></script>
 
@@ -14,13 +14,14 @@
 
 <body>
   <div id='container'>
-    <h1>Welcome to the Movie Buff</h1>
+    <h1 class="title">movieBuff.io</h1>
       <form id="inputForm">
-        Type Actor Here: <br><br>
+    <!--     Type Actor Here: <br><br> -->
         <input id="searchInput" type ="text" name="actor">
-        <button id="button" type="button">Click to see their best films!</button>
 
       </form>
+
+       <button id="button" type="button">Search</button>
       <div id='results'>
       </div>
 
