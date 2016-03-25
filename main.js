@@ -1,10 +1,14 @@
-var request = require('superagent')
-var dotenv = require('dotenv')
-dotenv.load()
+$(document).ready(function() {
 
-//get search input from user...
+//Tells jquery to wait until dom has loaded before loading jquery
 
-//call api with serach criteria....
+var inputData = $("#button").click(function() {
 
-//get response back from api and render it to the user screen....
+var rawInput = $("#searchInput").val().toString();
+
+console.log(typeof rawInput)
+})
+});
+
+console.log(dataForGetRequest)
 
