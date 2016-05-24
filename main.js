@@ -1,4 +1,5 @@
 var request = require('superagent')
+var $ = require('jquery')
 
 $(document).ready(function() {
 
@@ -52,4 +53,3 @@ function getMovieByActor(name, callback){
 
 
 })
-
